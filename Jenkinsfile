@@ -26,6 +26,6 @@ node ('built-in') {
 }
 
   stage ('Publish') {
-    sh 'scp **/target/*.jar root@erms-ubuntu:/root'
+    sh 'scp target/*.war root@erms-ubuntu:/root'
   }
 }
