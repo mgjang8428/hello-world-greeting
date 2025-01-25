@@ -5,7 +5,7 @@ node ('built-in') {
 
   stage('Preparation') {
     mvnHome = tool 'M3'
-    sonarqubeHome = tool 'erms-sonarqube'
+    sonarqubeHome = tool 'sonarqube-scanner'
     
   }
     
