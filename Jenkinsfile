@@ -1,7 +1,7 @@
 pipeline {
   agent 'built-in'
   tools {
-    maven('M3")
+    maven('M3')
   }
   
   stage('Poll') {
