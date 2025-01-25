@@ -1,9 +1,12 @@
 node ('built-in') {
 
   def mvnHome
+  def sonarqubeHome
 
   stage('Preparation') {
     mvnHome = tool 'M3'
+    sonarqubeHome = tool 'erms-sonarqube'
+    
   }
     
   stage('Poll') {
@@ -17,7 +20,7 @@ node ('built-in') {
   }
 
   stage('Static Code Analysis') {
-    sh "'${mvnHome}/bin/mvn' clean verify sonar:sonar -Dsonar.projectName=example-project -Dsonar.projectKey=example-project -Dsonar.projectVersion=$BUILD_NUMBER";
+    sh "'${mvnHome}/bin/mvn' clean verify ${sonarqubeHome}/bin/sonar-scanner -Dsonar.projectName=example-project -Dsonar.projectKey=example-project -Dsonar.projectVersion=$BUILD_NUMBER";
 }
 
   // stage ('Publish') {}
