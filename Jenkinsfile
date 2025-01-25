@@ -1,5 +1,5 @@
 pipeline {
-  agent build-in
+  agent built-in
   tools {
     maven('M3")
   }
