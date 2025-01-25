@@ -5,8 +5,8 @@ node ('built-in') {
 
   stage('Preparation') {
     mvnHome = tool 'M3'
-    sonarqubeHome = tool 'sonarqube-scanner'
-    
+    sonarqubeHome = tool 'sonarqube-scanner';
+    withSonarQubeEnv(credentialsId: "sonarqube", installationName: 'sonarqube')
   }
     
   stage('Poll') {
